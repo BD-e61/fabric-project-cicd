@@ -38,4 +38,4 @@ jobs:
           FABRIC_ENVIRONMENT: ${{ vars.FABRIC_ENVIRONMENT }}
           FABRIC_REPOSITORY_DIRECTORY: ${{ vars.FABRIC_REPOSITORY_DIRECTORY }}
         run: |
-          python .deploy/deploy.py
+          python deploy/deploy.py
