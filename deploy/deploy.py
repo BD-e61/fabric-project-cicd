@@ -32,26 +32,26 @@ def main():
             f"{repository_directory}"
         )
 
-    # Limit the deployment to the artifact types you use.
-    # Adjust this list to match your repository.
-    item_types_in_scope = [
-        "Notebook",
-        "DataPipeline",
-        "Environment",
-        "Lakehouse",
-    ]
+    # # Limit the deployment to the artifact types you use.
+    # # Adjust this list to match your repository.
+    # item_types_in_scope = [
+    #     "Notebook",
+    #     "DataPipeline",
+    #     "Environment",
+    #     "Lakehouse",
+    # ]
 
     print(f"Target workspace ID: {workspace_id}")
     print(f"Environment: {environment}")
     print(f"Repository directory: {repository_directory}")
-    print(f"Item types in scope: {item_types_in_scope}")
+    # print(f"Item types in scope: {item_types_in_scope}")
 
     workspace = FabricWorkspace(
         workspace_id=workspace_id,
         environment=environment,
         repository_directory=str(repository_directory),
-        item_type_in_scope=item_types_in_scope,
-        token_credential=credential,
+        #item_type_in_scope=item_types_in_scope,
+        token_credential=credential
     )
 
     publish_all_items(workspace)
