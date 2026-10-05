@@ -36,6 +36,5 @@ jobs:
           FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
           FABRIC_WORKSPACE_ID: ${{ vars.FABRIC_WORKSPACE_ID }}
           FABRIC_ENVIRONMENT: ${{ vars.FABRIC_ENVIRONMENT }}
-          FABRIC_REPOSITORY_DIRECTORY: ${{ vars.FABRIC_REPOSITORY_DIRECTORY }}
         run: |
           python deploy/deploy.py
