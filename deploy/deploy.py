@@ -32,42 +32,25 @@ def main():
             f"{repository_directory}"
         )
 
-    # # Limit the deployment to the artifact types you use.
-    # # Adjust this list to match your repository.
-    # item_types_in_scope = [
-    #     "Notebook",
-    #     "DataPipeline",
-    #     "Environment",
-    #     "Lakehouse",
-    # ]
+    # Limit the deployment to the artifact types you use.
+    # Adjust this list to match your repository.
+    item_types_in_scope = [
+        "Notebook",
+        "DataPipeline",
+        "Environment",
+        "Lakehouse",
+    ]
 
     print(f"Target workspace ID: {workspace_id}")
     print(f"Environment: {environment}")
     print(f"Repository directory: {repository_directory}")
-    # print(f"Item types in scope: {item_types_in_scope}")
-
-    import requests
-
-    # Diagnostic: test direct Fabric API access
-    token = credential.get_token(
-        "https://api.fabric.microsoft.com/.default"
-    ).token
-
-    response = requests.get(
-        f"https://api.fabric.microsoft.com/v1/workspaces/{workspace_id}",
-        headers={
-            "Authorization": f"Bearer {token}"
-        },
-    )
-
-    print(f"Direct Fabric API status: {response.status_code}")
-    print(f"Direct Fabric API response: {response.text}")
+    print(f"Item types in scope: {item_types_in_scope}")
     
     workspace = FabricWorkspace(
         workspace_id=workspace_id,
         environment=environment,
         repository_directory=str(repository_directory),
-        #item_type_in_scope=item_types_in_scope,
+        item_type_in_scope=item_types_in_scope,
         token_credential=credential
     )
 
