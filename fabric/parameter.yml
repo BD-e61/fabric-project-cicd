@@ -1,10 +1,10 @@
 find_replace:
 
-  - find_value: 'ENVIRONMENT = "DEV"'
+  - find_value: 'ENVIRONMENT = "dev"'
     replace_value:
-      DEV: 'ENVIRONMENT = "DEV"'
-      QA: 'ENVIRONMENT = "QA"'
-      PROD: 'ENVIRONMENT = "PROD"'
+      DEV: 'ENVIRONMENT = "dev"'
+      QA: 'ENVIRONMENT = "qa"'
+      PROD: 'ENVIRONMENT = "prod"'
     item_type: "Notebook"
 
   - find_value: 'LOCATION = "Brussels"'
