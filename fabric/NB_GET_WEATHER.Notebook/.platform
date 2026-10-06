@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Lakehouse",
-    "displayName": "LH_bronze"
+    "type": "Notebook",
+    "displayName": "NB_GET_WEATHER"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "b258ef89-2e76-9d49-46f7-6bbb8c634960"
+    "logicalId": "17d3d047-5fe4-8b79-4b68-2ae2f161de9b"
   }
 }
