@@ -1,1 +1,29 @@
-find_replace: []
+find_replace:
+
+  - find_value: 'ENVIRONMENT = "DEV"'
+    replace_value:
+      DEV: 'ENVIRONMENT = "DEV"'
+      QA: 'ENVIRONMENT = "QA"'
+      PROD: 'ENVIRONMENT = "PROD"'
+    item_type: "Notebook"
+
+  - find_value: 'LOCATION = "Brussels"'
+    replace_value:
+      DEV: 'LOCATION = "Brussels"'
+      QA: 'LOCATION = "New York"'
+      PROD: 'LOCATION = "Tokyo"'
+    item_type: "Notebook"
+
+  - find_value: 'LATITUDE = 50.8503'
+    replace_value:
+      DEV: 'LATITUDE = 50.8503'
+      QA: 'LATITUDE = 40.7128'
+      PROD: 'LATITUDE = 35.6762'
+    item_type: "Notebook"
+
+  - find_value: 'LONGITUDE = 4.3517'
+    replace_value:
+      DEV: 'LONGITUDE = 4.3517'
+      QA: 'LONGITUDE = -74.0060'
+      PROD: 'LONGITUDE = 139.6503'
+    item_type: "Notebook"
