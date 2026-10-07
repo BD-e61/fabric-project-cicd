@@ -1,25 +1,24 @@
 find_replace:
 
-  - find_value: "LH_DEV"
+  - find_value: "$items.Lakehouse.LH_bronze.$id"
     replace_value:
-      dev: "LH_DEV"
-      qa: "LH_QA"
-      prod: "LH_PROD"
-    item_type: "Lakehouse"
-
-  - find_value: '\#\s*META\s+"default_lakehouse":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"'
-    replace_value:
-      dev: "$items.Lakehouse.LH_DEV.$id"
-      qa: "$items.Lakehouse.LH_QA.$id"
-      prod: "$items.Lakehouse.LH_PROD.$id"
+      qa: "$items.Lakehouse.LH_bronze.$id"
+      prod: "$items.Lakehouse.LH_bronze.$id"
     is_regex: "true"
-    item_type: "Notebook"
 
   - find_value: '\#\s*META\s+"default_lakehouse_workspace_id":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"'
     replace_value:
-      dev: "$workspace.$id"
-      qa: "$workspace.$id"
-      prod: "$workspace.$id"
+      dev: "125b2b62-ab60-4936-954d-2570ff4a99a5"  # GUID workspace
+      qa: "$workspace.$id" # resolves workspace id of target environment
+      prod: "$workspace.DEMO_CICD_prod.$id" # resolved target workspace name 'DEMO_CICD_prod'
+    is_regex: "true"
+    item_type: "Notebook"
+
+  - find_value: '\#\s*META\s+"default_lakehouse":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"'
+    replace_value:
+      dev: "$items.Lakehouse.LH_bronze.$id"
+      qa: "$items.Lakehouse.LH_bronze.$id"
+      prod: "$items.Lakehouse.LH_bronze.$id"
     is_regex: "true"
     item_type: "Notebook"
 
