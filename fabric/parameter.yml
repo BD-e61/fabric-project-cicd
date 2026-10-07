@@ -7,6 +7,11 @@ find_replace:
       prod: 'ENVIRONMENT = "prod"'
     item_type: "Notebook"
 
+  - find_value: "125b2b62-ab60-4936-954d-2570ff4a99a5"
+    replace_value:
+      qa: "$workspace.DEMO_CICD_qa.$id"
+      prod: "$workspace.DEMO_CICD_PROD.$id"
+
   - find_value: 'LOCATION = "Brussels"'
     replace_value:
       dev: 'LOCATION = "Brussels"'
