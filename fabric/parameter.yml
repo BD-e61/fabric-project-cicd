@@ -1,16 +1,34 @@
 find_replace:
 
-  - find_value: 'ENVIRONMENT = "dev"'
+  - find_value: "LH_DEV"
     replace_value:
-      dev: 'ENVIRONMENT = "dev"'
-      qa: 'ENVIRONMENT = "qa"'
-      prod: 'ENVIRONMENT = "prod"'
+      dev: "LH_DEV"
+      qa: "LH_QA"
+      prod: "LH_PROD"
+    item_type: "Lakehouse"
+
+  - find_value: '\#\s*META\s+"default_lakehouse":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"'
+    replace_value:
+      dev: "$items.Lakehouse.LH_DEV.$id"
+      qa: "$items.Lakehouse.LH_QA.$id"
+      prod: "$items.Lakehouse.LH_PROD.$id"
+    is_regex: "true"
     item_type: "Notebook"
 
-  - find_value: "125b2b62-ab60-4936-954d-2570ff4a99a5"
+  - find_value: '\#\s*META\s+"default_lakehouse_workspace_id":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"'
     replace_value:
-      qa: "$workspace.DEMO_CICD_qa.$id"
-      prod: "$workspace.DEMO_CICD_PROD.$id"
+      dev: "$workspace.$id"
+      qa: "$workspace.$id"
+      prod: "$workspace.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
+  - find_value: "dev"
+    replace_value:
+      dev: "dev"
+      qa: "qa"
+      prod: "prod"
+    item_type: "Notebook"
 
   - find_value: 'LOCATION = "Brussels"'
     replace_value:
