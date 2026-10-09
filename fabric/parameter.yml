@@ -15,6 +15,13 @@ find_replace:
     is_regex: "true"
     item_type: "Notebook"
 
+  - find_value: '\#\s*META\s+"id":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"'
+    replace_value:
+      qa: "$items.Lakehouse.LH_bronze.$id"
+      prod: "$items.Lakehouse.LH_bronze.$id"
+    is_regex: "true"
+    item_type: "Notebook"
+
   - find_value: "dev"
     replace_value:
       dev: "dev"
