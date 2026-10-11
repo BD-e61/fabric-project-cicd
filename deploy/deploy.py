@@ -150,6 +150,7 @@ def main():
 
     # Step 1: Deploy Fabric artifacts.
     publish_all_items(workspace)
+    unpublish_all_orphan_items(workspace)
     print("Fabric deployment completed.")
 
 
