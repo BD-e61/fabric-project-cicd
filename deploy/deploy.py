@@ -5,7 +5,7 @@ from pathlib import Path
 
 import requests
 from azure.identity import ClientSecretCredential
-from fabric_cicd import FabricWorkspace, publish_all_items
+from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items
 
 
 FABRIC_API = "https://api.fabric.microsoft.com/v1"
